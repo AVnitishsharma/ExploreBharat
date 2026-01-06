@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+html, body, .root {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+:root {
+  --primary-color: #F5EFE6;
+  --secondary-color: #d04c21;
+  --tertiary-color: #12a202;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  position: relative;
+}
+nav h1 {
+  font-size: 2rem;
+  color: #ff3c00;
+}
+nav .middile {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  font-size: medium;
+  padding: 5px 10px;
+  font-weight: 500;
+}
+nav .middile li {
+  position: static;
+}
+nav .middile li .dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 20px 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: all 0.5s ease;
+  z-index: 99;
+}
+nav .middile li .dropdown li {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 400;
+}
+nav .middile li:hover .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+nav .right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+nav .right i {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+nav .right .language {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+nav .right .id {
+  background-color: rgba(37, 177, 9, 0.911);
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.home {
+  height: 94vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  background-image: url("https://wallpapercave.com/wp/wp7231447.jpg");
+  position: relative;
+  font-size: 10rem;
+  z-index: 0;
+}
+.home h3 {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  font-size: 7rem;
+  color: var(--secondary-color);
+}
+.home h2 {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+}
+.home h4 {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  font-size: 4rem;
+  color: var(--tertiary-color);
+}
+
+.sado {
+  height: 20vh;
+  width: 100%;
+  background: linear-gradient(transparent, rgb(0, 0, 0) 50%, transparent);
+  margin: -70px 0;
+  position: relative;
+  z-index: 5;
+}
+
+.trending {
+  height: 140vh;
+  width: 100%;
+  padding-top: 4rem;
+}
+.trending .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 4rem;
+}
+.trending .search p {
+  font-size: 2rem;
+}
+.trending .search input {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  width: 30%;
+}
+.trending .search button {
+  padding: 7px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: rgb(1, 1, 123);
+  color: white;
+  width: 15%;
+}
+.trending .trendingplaces {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  gap: 10px;
+  padding-bottom: 5rem;
+}
+.trending .trendingplaces h2 {
+  font-size: 5rem;
+}
+.trending .trendingplaces .places {
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.trending .trendingplaces .places .card {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.trending .trendingplaces .places .card img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.trending .trendingplaces .places .card h2 {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.category {
+  height: 100vh;
+  width: 100%;
+  background: url("https://wallpapercave.com/wp/wp6629523.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 1rem;
+}
+.category h2 {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--secondary-color);
+}
+.category .categorycard {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.category .categorycard .card {
+  flex-wrap: nowrap;
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+.category .categorycard .card img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.category .categorycard .card h2 {
+  font-size: 2rem;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+@keyframes changeBg {
+  0% {
+    background-image: url("https://i.pinimg.com/1200x/10/67/39/1067396061c5a1af8eac35357e9e0333.jpg");
+    background-position: 0% 50%;
+  }
+  25% {
+    background-image: url("https://i.pinimg.com/1200x/6b/b5/95/6bb595b78ee185d646f5a4b33a0ba055.jpg");
+    background-position: 50% 50%;
+  }
+  50% {
+    background-image: url("https://i.pinimg.com/1200x/51/6c/f6/516cf6ae6a64b0bd190805a87b4acc5f.jpg");
+    background-position: 100% 50%;
+  }
+  75% {
+    background-image: url("https://i.pinimg.com/1200x/6b/b5/95/6bb595b78ee185d646f5a4b33a0ba055.jpg");
+    background-position: 50% 50%;
+  }
+  100% {
+    background-image: url("https://i.pinimg.com/1200x/5a/e0/7e/5ae07ed8c6d2fb759f5e7342b4a30d41.jpg");
+    background-position: 0% 50%;
+  }
+}/*# sourceMappingURL=indes.css.map */
