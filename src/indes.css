@@ -23,7 +23,12 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 5px 10px;
-  position: relative;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.501);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 nav h1 {
   font-size: 2rem;
@@ -39,6 +44,11 @@ nav .middile {
 }
 nav .middile li {
   position: static;
+  list-style: none;
+  cursor: pointer;
+}
+nav .middile li:hover {
+  color: var(--tertiary-color);
 }
 nav .middile li .dropdown {
   position: absolute;
@@ -48,9 +58,9 @@ nav .middile li .dropdown {
   justify-content: space-around;
   gap: 10px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.825);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
   padding: 20px 10px;
   opacity: 0;
   visibility: hidden;
@@ -58,11 +68,16 @@ nav .middile li .dropdown {
   transition: all 0.5s ease;
   z-index: 99;
 }
-nav .middile li .dropdown li {
+nav .middile li .dropdown a, nav .middile li .dropdown li {
   list-style: none;
   cursor: pointer;
   font-size: 1rem;
   font-weight: 400;
+  color: white;
+  text-decoration: none;
+}
+nav .middile li .dropdown a:hover, nav .middile li .dropdown li:hover {
+  color: var(--secondary-color);
 }
 nav .middile li:hover .dropdown {
   opacity: 1;
@@ -94,10 +109,10 @@ nav .right .id {
 .home {
   height: 94vh;
   width: 100%;
+  color: white;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
   background-image: url("https://wallpapercave.com/wp/wp7231447.jpg");
   position: relative;
   font-size: 10rem;
@@ -149,7 +164,7 @@ nav .right .id {
   font-size: 2rem;
 }
 .trending .search input {
-  margin-top: 10px;
+  margin: 5px;
   padding: 10px 20px;
   border-radius: 10px;
   border: 1px solid white;
@@ -157,16 +172,6 @@ nav .right .id {
   background-color: transparent;
   color: white;
   width: 30%;
-}
-.trending .search button {
-  padding: 7px 20px;
-  border-radius: 10px;
-  border: 1px solid white;
-  font-size: 1.5rem;
-  font-weight: 500;
-  background-color: rgb(1, 1, 123);
-  color: white;
-  width: 15%;
 }
 .trending .trendingplaces {
   display: flex;
@@ -195,6 +200,7 @@ nav .right .id {
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  color: white;
 }
 .trending .trendingplaces .places .card img {
   height: 100%;
@@ -214,16 +220,18 @@ nav .right .id {
 .category {
   height: 100vh;
   width: 100%;
-  background: url("https://wallpapercave.com/wp/wp6629523.jpg");
+  background: url("https://i.pinimg.com/1200x/e9/37/05/e937055b9ca9e11ba09b302eb20d1e4e.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top: 1rem;
+  padding-top: 2rem;
+  margin-bottom: -5rem;
+  margin-top: 1rem;
 }
 .category h2 {
   font-size: 4rem;
   text-align: center;
-  color: var(--secondary-color);
+  margin-bottom: 1rem;
 }
 .category .categorycard {
   height: 80vh;
@@ -231,15 +239,16 @@ nav .right .id {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
   padding: 20px;
 }
 .category .categorycard .card {
-  flex-wrap: nowrap;
-  width: 50%;
-  border-radius: 10px;
+  height: 50%;
+  width: 18%;
+  border-radius: 45%;
   overflow: hidden;
   position: relative;
+  transition: all 0.5s ease-in-out;
 }
 .category .categorycard .card img {
   height: 100%;
@@ -248,17 +257,272 @@ nav .right .id {
      object-fit: cover;
 }
 .category .categorycard .card h2 {
-  font-size: 2rem;
+  font-size: 1.2rem;
+  font-weight: 700;
   position: absolute;
-  bottom: 0%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  white-space: nowrap;
+  color: rgb(0, 0, 0);
+  background-color: rgba(186, 190, 190, 0.59);
+}
+.category .categorycard .card:hover {
+  height: 90%;
+  width: 60%;
+  transform: scaleY(1.2);
+  border-radius: 10px;
+}
+
+.india {
+  height: 100vh;
+  width: 100%;
+  padding-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  padding: 20px;
+}
+.india .info {
+  height: 80%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.india .info h2 {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.india .info p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.india .map {
+  height: 80%;
+  width: 40%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.india .map img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: rgb(1, 1, 123);
+  color: white;
+}
+
+.arrobtn {
+  background-color: transparent;
+  border: none;
+  color: #f4c430;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.arrobtn:hover {
+  color: var(--secondary-color);
+  font-size: 1.03rem;
+}
+
+.tajmahal {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #021d35;
+  color: #9ca3af;
+}
+.tajmahal img {
+  height: 100vh;
+  width: 100vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+  z-index: 0;
+}
+.tajmahal h2 {
+  font-size: 5rem;
+  padding: 2rem;
+}
+.tajmahal .right {
+  margin: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tajmahal .right .info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 5%;
+}
+.tajmahal .right .info h2 {
+  font-size: 4rem;
+  text-align: center;
+}
+.tajmahal .right .info p {
+  font-size: 1rem;
+  padding: 10px 0;
+}
+.tajmahal .right img {
+  width: 50%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 25% 0 0 25%;
+}
+.tajmahal .lift {
+  margin: 3rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.tajmahal .lift .info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 5%;
+}
+.tajmahal .lift .info h2 {
+  font-size: 4rem;
+  text-align: center;
+}
+.tajmahal .lift .info p {
+  font-size: 1rem;
+  padding: 10px 0;
+}
+.tajmahal .lift img {
+  width: 50%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0 25% 25% 0;
+}
+.tajmahal .tajphoto {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.tajmahal .tajphoto img {
+  width: 100%;
+  height: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 20px;
+  border: 1px solid #f4c430;
+  transition: all 0.5s ease;
+}
+.tajmahal .tajphoto img:hover {
+  height: 100%;
+}
+
+.footer {
+  background: #0b1c2d;
+  color: #fff;
+  padding: 60px 20px 20px;
+  margin-top: -50px;
+  font-family: "Poppins", sans-serif;
+}
+.footer-info {
+  width: 90%;
+  margin: 2rem auto;
+}
+.footer-info h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f4c430;
+  line-height: 0.8;
+}
+.footer-info p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+.footer-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.footer-box h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #f4c430;
+}
+.footer-box p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d1d5db;
+}
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-box ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #d1d5db;
+  transition: all 0.3s ease;
+}
+.footer-box ul li:hover {
+  color: #f4c430;
+  padding-left: 5px;
+}
+.footer-box .social-links {
+  margin-top: 10px;
+}
+.footer-box .social-links a {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 18px;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+.footer-box .social-links a:hover {
+  color: #f4c430;
+  border: 1px solid #f4c430;
+  border-radius: 10px;
+  padding: 2px;
+}
+.footer-bottom {
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid white;
+  text-align: center;
+}
+.footer-bottom p {
+  font-size: 13px;
+  color: #9ca3af;
 }
 
 @keyframes changeBg {
   0% {
-    background-image: url("https://i.pinimg.com/1200x/10/67/39/1067396061c5a1af8eac35357e9e0333.jpg");
+    background-image: url("https://wallpapercave.com/wp/wp7231447.jpg");
     background-position: 0% 50%;
   }
   25% {
@@ -266,15 +530,15 @@ nav .right .id {
     background-position: 50% 50%;
   }
   50% {
-    background-image: url("https://i.pinimg.com/1200x/51/6c/f6/516cf6ae6a64b0bd190805a87b4acc5f.jpg");
+    background-image: url("https://www.bwallpaperhd.com/wp-content/uploads/2021/09/AsianElephants-1024x576.jpg");
     background-position: 100% 50%;
   }
   75% {
-    background-image: url("https://i.pinimg.com/1200x/6b/b5/95/6bb595b78ee185d646f5a4b33a0ba055.jpg");
+    background-image: url("https://wallpaperaccess.com/full/1635200.jpg");
     background-position: 50% 50%;
   }
   100% {
-    background-image: url("https://i.pinimg.com/1200x/5a/e0/7e/5ae07ed8c6d2fb759f5e7342b4a30d41.jpg");
+    background-image: url("https://wallpaperaccess.com/full/504997.jpg");
     background-position: 0% 50%;
   }
 }/*# sourceMappingURL=indes.css.map */

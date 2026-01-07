@@ -1,12 +1,12 @@
 
+import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <nav>
       <h1>ExploreBharat</h1>
       <ul className="middile">
         <li className="navhome">Home</li>
-        <li className="populars">
-          Popular
+        <li className="populars">Popular
           <div className="dropdown">
             <ul className="hillstations">
               <h2>Hill Stations</h2>
@@ -29,7 +29,7 @@ const Nav = () => {
             </ul>
             <ul className="hiistorical">
               <h2>Historical Places</h2>
-              <li>Taj Mahal – Agra (Uttar Pradesh)</li>
+              <Link to="/tajmahal">Taj Mahal - Agra (Uttar Pradesh)</Link>
               <li>Jaipur (Rajasthan)</li>
               <li>Udaipur (Rajasthan)</li>
               <li>Lal Kila(delhi)</li>
@@ -56,8 +56,7 @@ const Nav = () => {
             </ul>
           </div>
         </li>
-        <li className="thingstodo">
-          ThingsToDo
+        <li className="thingstodo">ThingsToGo
           <div className="dropdown">
             <ul className="unisco">
               <h2>Unesco Heritage Sites</h2>
@@ -110,6 +109,12 @@ const Nav = () => {
               <li>Temples</li>
               <li>Yoga</li>
               <li>Ashrms</li>
+              <br />
+              <h2>Statues</h2>
+              <li>Statue of Unity</li>
+              <li>Statue of Liberty</li>
+              <li>Statue of Unity</li>
+              <li>Statue of Liberty</li>
             </ul>
             <ul className="beaches">
               <h2>Beaches</h2>
@@ -127,11 +132,116 @@ const Nav = () => {
             </ul>
           </div>
         </li>
-        <li className="packages">Packages/Trips</li>
-        <li className="hotels">Hotels/Stay</li>
-        <li className="foodculture">Food&Culture</li>
-        <li className="blog">Blog</li>
-        <li className="aboutindia">AboutIndia</li>
+        <li className="trips">Trips
+          <div className="dropdown">
+            <ul>
+              <h2>Trips</h2>
+              <li>Femaily Trips</li>
+              <li>Group Trips</li>
+              <li>Couple Trips</li>
+              <li>Solo Travel</li>
+              <li>Honeymoon</li>
+            </ul>
+          </div>
+        </li>
+        <li className="hotels">Hotels/Stay
+          <div className="dropdown">
+            <ul>
+              <h2>Hotels</h2>
+              <li>5 Star</li>
+              <li>4 Star</li>
+              <li>3 Star</li>
+              <li>2 Star</li>
+              <li>1 Star</li>
+            </ul>
+            <ul>
+              <h2>Stay</h2>
+              <li>Resorts</li>
+              <li>Guest Houses</li>
+              <li>Hostels</li>
+              <li>HomeStay</li>
+              <li>Motels</li>
+              <li>Resorts</li>
+              <li>Guest Houses</li>
+            </ul>
+          </div>
+        </li>
+        <li className="foodculture">Food&Culture
+          <div className="dropdown">
+            <ul>
+              <h2>Indian Food</h2>
+              <li>North Indian</li>
+              <li>South Indian</li>
+              <li>Bihari</li>
+              <li>Punjabi</li>
+              <li>Rajasthani</li>
+              <li>Bengali</li>
+              <li>Gujarati</li>
+              <li>Kerala</li>
+              <li>Tamil</li>
+              <li>Andhra</li>
+            </ul>
+            <ul>
+              <h2>Festivals</h2>
+              <li>Diwali</li>
+              <li>Holi</li>
+              <li>Chath Puja</li>
+              <li>Navratri</li>
+              <li>Ganesh Chaturthi</li>
+              <li>Christmas</li>
+              <li>Eid</li>
+            </ul>
+            <ul>
+              <h2>Culture</h2>
+              <li>Art</li>
+              <li>Architecture</li>
+              <li>Music</li>
+              <li>History</li>
+              <li>Art</li>
+              <li>Architecture</li>
+            </ul>
+            <ul>
+              <h2>Local Traditions</h2>
+              <li>Wedding</li>
+              <li>Funeral</li>
+              <li>Baptism</li>
+              <li>Wedding</li>
+              <li>Funeral</li>
+              <li>Baptism</li>
+            </ul>
+          </div>
+        </li>
+        <li className="gallery">Gallery
+          <div className="dropdown">
+            <ul>
+              <h2>Gallery</h2>
+              <li>Photos</li>
+              <li>Video</li>
+            </ul>
+            <ul>
+              <h2>Travel Story</h2>
+              <li>Photos</li>
+              <li>Video</li>
+            </ul>
+            <ul>
+              <h2>Hidden Places</h2>
+              <li>Photos</li>
+              <li>Video</li>
+            </ul>
+          </div>
+        </li>
+        <li className="aboutindia">AboutIndia
+          <div className="dropdown">
+            <ul>
+              <h2>About India</h2>
+              <li>History</li>
+              <li>Culture</li>
+              <li>Geography</li>
+              <li>Languages</li>
+              <li>Map of India</li>
+            </ul>
+          </div>
+        </li>
         <li className="travelguide">TravelGuide</li>
         <li className="support">Support</li>
       </ul>
