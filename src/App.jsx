@@ -18,6 +18,7 @@ const App = () => {
         <Route path="/bihar" element={<Bihar />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
+
       <Footer/>
     </>
   )

@@ -1,5 +1,6 @@
-
 import { Link } from 'react-router-dom'
+import NavaSearch from './NavaSearch'
+
 const Nav = () => {
   return (
     <nav>
@@ -246,7 +247,7 @@ const Nav = () => {
         <li className="support">Support</li>
       </ul>
       <div className="right">
-        <i className="ri-search-line"></i>
+        <NavaSearch />
         <div className="language">En</div>
         <div className="id">N</div>
       </div>

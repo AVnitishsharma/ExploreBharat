@@ -20,9 +20,10 @@ html, body, .root {
 }
 
 nav {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
   padding: 5px 10px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -33,7 +34,7 @@ nav {
 }
 nav h1 {
   font-size: 2rem;
-  color: #ff3c00;
+  color: #ff0000;
 }
 nav .middile {
   display: flex;
@@ -90,11 +91,9 @@ nav .middile a:hover .dropdown, nav .middile li:hover .dropdown {
 nav .right {
   display: flex;
   align-items: center;
-  gap: 15px;
-}
-nav .right i {
-  cursor: pointer;
-  font-size: 1.2rem;
+  justify-content: end;
+  gap: 10px;
+  width: 13%;
 }
 nav .right .language {
   font-size: 1.5rem;
@@ -185,7 +184,6 @@ nav .right .id {
   justify-content: space-between;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 4rem;
 }
 .search input {
   margin: 5px;
@@ -196,6 +194,72 @@ nav .right .id {
   background-color: transparent;
   color: white;
   width: 30%;
+}
+
+.navsearch {
+  display: flex;
+  position: relative;
+  width: 30%;
+}
+.navsearch input {
+  padding: 5px 10px;
+  border-radius: 30px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  transition: all 0.5s ease;
+}
+.navsearch::-moz-placeholder {
+  color: white;
+  font-size: 1.2rem;
+}
+.navsearch::placeholder {
+  color: white;
+  font-size: 1.2rem;
+}
+.navsearch:hover {
+  width: 150px;
+}
+.navsearch button, .navsearch i {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+  background-color: transparent;
+  border: none;
+}
+
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: rgb(1, 1, 123);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover {
+  background-color: var(--tertiary-color);
+}
+
+.arrobtn {
+  background-color: transparent;
+  border: none;
+  color: #f4c430;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.arrobtn:hover {
+  color: var(--secondary-color);
+  font-size: 1.03rem;
 }
 
 .trending {
@@ -350,29 +414,6 @@ nav .right .id {
      object-fit: cover;
 }
 
-.button {
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid white;
-  font-size: 1.5rem;
-  font-weight: 500;
-  background-color: rgb(1, 1, 123);
-  color: white;
-}
-
-.arrobtn {
-  background-color: transparent;
-  border: none;
-  color: #f4c430;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.arrobtn:hover {
-  color: var(--secondary-color);
-  font-size: 1.03rem;
-}
-
 .tajmahal {
   width: 100%;
   display: flex;
@@ -390,7 +431,6 @@ nav .right .id {
   z-index: 0;
 }
 .tajmahal h2 {
-  margin-top: 2rem;
   font-size: 5rem;
   padding-top: 2rem;
   font-family: "UnifrakturMaguntia", cursive;
@@ -404,6 +444,7 @@ nav .right .id {
   font-family: "Quintessential", serif;
 }
 .tajmahal .right {
+  margin: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -454,7 +495,7 @@ nav .right .id {
   padding: 10px 0;
 }
 .tajmahal .lift img {
-  width: 45%;
+  width: 50%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -519,7 +560,7 @@ nav .right .id {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .tajmahal .nearby .places .righttop {
   grid-column: 3/5;
@@ -536,7 +577,7 @@ nav .right .id {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .tajmahal .nearby .places .leftbottom {
   grid-row: 4/6;
@@ -553,7 +594,7 @@ nav .right .id {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .tajmahal .nearby .places .rightbottom {
   grid-column: 4/6;
@@ -570,7 +611,7 @@ nav .right .id {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .tajmahal .nearby .places .mid {
   grid-column: 3/4;
@@ -587,7 +628,7 @@ nav .right .id {
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 .tajmahal .hotal {
   width: 100%;
@@ -665,6 +706,7 @@ nav .right .id {
   color: #fff;
   padding: 60px 20px 20px;
   margin-top: -50px;
+  font-family: "Poppins", sans-serif;
 }
 .footer-info {
   width: 90%;

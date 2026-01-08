@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Button from "./button";
 
-
-function Search() {
+function NavaSearch() {
   const [text, setText] = useState("");
   const navigate = useNavigate();
 
@@ -15,16 +13,16 @@ function Search() {
   };
 
   return (
-    <form className="search" onSubmit={handleSearch}>
+    <form className="navsearch" onSubmit={handleSearch}>
       <input
         type="text"
-        placeholder="Search places, states, destinations…"
+        placeholder="..........."
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <Button text="Search Places" />
+      <button type="submit"><i className="ri-search-line"></i></button>
     </form>
   );
 }
 
-export default Search;
+export default NavaSearch;
