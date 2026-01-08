@@ -5,7 +5,7 @@ const Nav = () => {
     <nav>
       <h1>ExploreBharat</h1>
       <ul className="middile">
-        <li className="navhome">Home</li>
+        <Link to="/" className="navhome">Home</Link>
         <li className="populars">Popular
           <div className="dropdown">
             <ul className="hillstations">
@@ -60,7 +60,7 @@ const Nav = () => {
           <div className="dropdown">
             <ul className="unisco">
               <h2>Unesco Heritage Sites</h2>
-              <li>Taj Mahal – Agra (Uttar Pradesh)</li>
+              <Link to="/tajmahal">Taj Mahal – Agra (Uttar Pradesh)</Link>
               <li>Jaipur (Rajasthan)</li>
               <li>Udaipur (Rajasthan)</li>
               <li>Lal Kila(delhi)</li>
@@ -70,7 +70,7 @@ const Nav = () => {
             </ul>
             <ul className="states">
               <h2>States</h2>
-              <li>Bihar</li>
+              <Link to="/bihar">Bihar</Link>
               <li>Uttar Pradesh</li>
               <li>Rajasthan</li>
               <li>Madhya Pradesh</li>

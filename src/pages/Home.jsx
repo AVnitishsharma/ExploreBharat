@@ -1,4 +1,5 @@
 import Sado from "../component/Sado"
+import Search from "../component/Search"
 import Button from "../component/button"
 import { Link } from "react-router-dom"
 
@@ -14,11 +15,8 @@ const Home = () => {
     <Sado/>
 
     <section className="trending">
-      <div className="search">
-        <p>India ke sabse khoobsurat tourist places ek hi jagah.</p>
-        <input type="text" placeholder="Search places, states, destinations…" />
-        <Button text="Explore" />
-      </div>
+      <p>India ke sabse khoobsurat tourist places ek hi jagah.</p>
+      <Search />
       <div className="trendingplaces">
         <h2>Popular Places</h2>
         <div className="places">

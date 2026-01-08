@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap');
+
 *{
   margin: 0;
   padding: 0;
@@ -23,7 +25,6 @@ $bg-dark: #0b1c2d;
 $text-light: #d1d5db;
 $text-muted: #9ca3af;
 $accent: #f4c430;
-$font-main: 'Poppins', sans-serif;
 
 nav{
   display: flex;
@@ -46,10 +47,12 @@ nav{
     font-size: medium;
     padding: 5px 10px;
     font-weight: 500;
-    li{
+    a,li{
       position: static;
       list-style: none;
       cursor: pointer;
+      color: white;
+      text-decoration: none;
       &:hover{
         color: var(--tertiary-color);
       }
@@ -58,10 +61,10 @@ nav{
         top: 100%;
         left: 0;
         display: flex;
-        justify-content: space-around;
-        gap: 10px;
+        justify-content: center;
+        gap: 30px;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.825);
+        background-color: rgba(0, 0, 0, 0.715);
         backdrop-filter: blur(20px);
         padding: 20px 10px;
         opacity: 0;
@@ -99,7 +102,7 @@ nav{
     }
     .language{
       font-size: 1.5rem;
-      cursor: pointer
+      cursor: pointer;
     }
     .id{
       background-color: rgba(37, 177, 9, 0.911);
@@ -147,6 +150,34 @@ nav{
   }
 }
 
+.notfound{
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(255, 0, 0);
+  h2{
+    font-size: 4rem;
+  }
+  p{
+    font-size: 2rem;
+  }
+  button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+  }
+}
 .sado{
   height: 20vh;
   width: 100%;
@@ -156,32 +187,36 @@ nav{
   z-index: 5;
 }
 
+.search{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap:10px;
+  margin-bottom: 4rem;
+  
+  input{
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+    font-size: 1.2rem;
+    background-color: transparent;
+    color: white;
+    width: 30%;
+  }
+}
+
 .trending{
   height: 140vh;
   width: 100%;
   padding-top: 4rem;
-  .search{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    gap:10px;
-    margin-bottom: 4rem;
-    p{
-      font-size: 2rem;
-    }
-    input{
-      margin: 5px;
-      padding: 10px 20px;
-      border-radius: 10px;
-      border: 1px solid white;
-      font-size: 1.2rem;
-      background-color: transparent;
-      color: white;
-      width: 30%;
-    }
-
+  p{
+    font-size: 2rem;
+    text-align: center;
+    font-family: "Quintessential", serif;
   }
+  
 
   .trendingplaces{
     display: flex;
@@ -349,32 +384,47 @@ nav{
   }
 }
 
+@mixin flex-end{
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
 .tajmahal{
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   background-color: #021d35;
   color: $text-muted;
   img{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     object-fit: cover;
     position: relative;
     z-index: 0;
   }
   h2{
+    margin-top: 2rem;
     font-size: 5rem;
-    padding: 2rem;
+    padding-top: 2rem;
+    font-family: "UnifrakturMaguntia", cursive;
+  }
+  h4{
+    font-size: 1.2rem;
+    padding: 10px 0;
+    margin-bottom: 1rem;
+    color: #ffec1c;
+    font-weight: 200;
+    font-family: "Quintessential", serif;
+
   }
   .right{
-    margin: 3rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     .info{
-      width: 50%;
+      width: 45%;
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -390,19 +440,19 @@ nav{
       }
     }
     img{
-      width: 50%;
+      width: 45%;
       height: 100%;
       object-fit: cover;
       border-radius: 25% 0 0 25%;
     }
   }
   .lift{
-    margin: 3rem;
+    margin: -1rem 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     .info{
-      width: 50%;
+      width: 45%;
       display: flex;
       flex-direction: column;
       align-items: start;
@@ -418,7 +468,7 @@ nav{
       }
     }
     img{
-      width: 50%;
+      width: 45%;
       height: 100%;
       object-fit: cover;
       border-radius: 0 25% 25% 0;
@@ -449,15 +499,179 @@ nav{
       }
     }
   }
+  .nearby{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    h2{
+      font-size: 5rem;
+      font-family: "Quintessential", serif;
+    }
+    .places{
+      height: 80vh;
+      width: 80%;
+      grid-template-columns:1fr 1fr 2fr 1fr 1fr;
+      display: grid;
+      grid-template-rows:1fr 1fr 2fr 1fr 1fr;
+      gap: 10px;
+      font-size: 1rem;
+      color: rgb(0, 0, 0);
+      .lefttop{
+        grid-column: 1/3;
+        grid-row: 2/4;
+        background-image: url("https://i.pinimg.com/736x/7e/4d/b0/7e4db025216b3ec859c546fc59d14ab0.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 2;
+        }
+        h3{
+          height: 100%;
+          @include flex-end;
+        }
+      }
+      .righttop{
+        grid-column: 3/5;
+        grid-row: 1/3;
+        background-image: url("https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 2;
+        }
+        h3{
+          height: 100%;
+          @include flex-end;
+        }
+      }
+      .leftbottom{
+        grid-row: 4/6;
+        grid-column: 2/4;
+        background-image: url("https://t3.ftcdn.net/jpg/03/42/14/70/240_F_342147053_Ghmto2LsNVkXZXKw61raqfnaYlQW77zD.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 2;
+        }
+        h3{
+          height: 100%;
+          @include flex-end;
+        }
+      }
+      .rightbottom{
+        grid-column: 4/6;
+        grid-row: 3/5;
+        background-image: url("https://i.pinimg.com/736x/04/2d/b7/042db7432b347e6c64915451eb893739.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 2;
+        }
+        h3{
+          height: 100%;
+          @include flex-end;
+        }
+      }
+      .mid{
+        grid-column: 3/4;
+        grid-row: 3/4;
+        background-image: url("https://eticketagra.in/images/Sikandra-agra.jpg");
+        background-size: cover;
+        background-position: center;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 2;
+        }
+        h3{
+          height: 100%;
+          @include flex-end;
+        }
+      }
+
+    }
+  }
+  .hotal{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8rem;
+    h2{
+      font-size: 5rem;
+      font-family: sans-serif;
+      padding-bottom: 2rem;
+    }
+    .hotals{
+      width: 100%;
+      height: 60vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      .card{
+        border: 2px solid white;
+        border-radius: 10px;
+        transition: all 0.5s ease;
+        &:hover{
+          scale: 1.1;
+        }
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 10px;
+        }
+        h3{
+          font-size: 1.5rem;
+          padding: 10px 0;
+          text-align: center;
+        
+        }
+      }
+    }
+  }
 }
-  
+
+.bihar{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  video{
+    width: 100%;
+    height: 94vh;
+    object-fit: cover;
+  }
+  h2{
+    font-size: 13rem;
+    padding: 2rem;
+    position: absolute;
+    font-family: "Quintessential", serif;
+    font-weight: 400;
+    font-style: normal;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: whitesmoke;
+    line-height: 1;
+    text-align: center;
+  }
+}
 
 .footer {
   background: $bg-dark;
   color: #fff;
   padding: 60px 20px 20px;
   margin-top: -50px;
-  font-family: $font-main;
   
   &-info {
     width: 90%;
@@ -528,7 +742,7 @@ nav{
           color: $accent;
           border: 1px solid $accent;
           border-radius: 10px;
-          padding: 2px
+          padding: 2px;
         }
       }
     }
@@ -548,6 +762,7 @@ nav{
 }
 
 @keyframes changeBg {
+  
   0% {
     background-image: url("https://wallpapercave.com/wp/wp7231447.jpg");
     background-position: 0% 50%;

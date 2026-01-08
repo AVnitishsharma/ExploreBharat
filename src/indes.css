@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -42,23 +43,25 @@ nav .middile {
   padding: 5px 10px;
   font-weight: 500;
 }
-nav .middile li {
+nav .middile a, nav .middile li {
   position: static;
   list-style: none;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 }
-nav .middile li:hover {
+nav .middile a:hover, nav .middile li:hover {
   color: var(--tertiary-color);
 }
-nav .middile li .dropdown {
+nav .middile a .dropdown, nav .middile li .dropdown {
   position: absolute;
   top: 100%;
   left: 0;
   display: flex;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: center;
+  gap: 30px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.825);
+  background-color: rgba(0, 0, 0, 0.715);
   -webkit-backdrop-filter: blur(20px);
           backdrop-filter: blur(20px);
   padding: 20px 10px;
@@ -68,7 +71,7 @@ nav .middile li .dropdown {
   transition: all 0.5s ease;
   z-index: 99;
 }
-nav .middile li .dropdown a, nav .middile li .dropdown li {
+nav .middile a .dropdown a, nav .middile a .dropdown li, nav .middile li .dropdown a, nav .middile li .dropdown li {
   list-style: none;
   cursor: pointer;
   font-size: 1rem;
@@ -76,10 +79,10 @@ nav .middile li .dropdown a, nav .middile li .dropdown li {
   color: white;
   text-decoration: none;
 }
-nav .middile li .dropdown a:hover, nav .middile li .dropdown li:hover {
+nav .middile a .dropdown a:hover, nav .middile a .dropdown li:hover, nav .middile li .dropdown a:hover, nav .middile li .dropdown li:hover {
   color: var(--secondary-color);
 }
-nav .middile li:hover .dropdown {
+nav .middile a:hover .dropdown, nav .middile li:hover .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
@@ -138,6 +141,35 @@ nav .right .id {
   color: var(--tertiary-color);
 }
 
+.notfound {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  color: rgb(255, 0, 0);
+}
+.notfound h2 {
+  font-size: 4rem;
+}
+.notfound p {
+  font-size: 2rem;
+}
+.notfound button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
 .sado {
   height: 20vh;
   width: 100%;
@@ -147,12 +179,7 @@ nav .right .id {
   z-index: 5;
 }
 
-.trending {
-  height: 140vh;
-  width: 100%;
-  padding-top: 4rem;
-}
-.trending .search {
+.search {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -160,10 +187,7 @@ nav .right .id {
   gap: 10px;
   margin-bottom: 4rem;
 }
-.trending .search p {
-  font-size: 2rem;
-}
-.trending .search input {
+.search input {
   margin: 5px;
   padding: 10px 20px;
   border-radius: 10px;
@@ -172,6 +196,17 @@ nav .right .id {
   background-color: transparent;
   color: white;
   width: 30%;
+}
+
+.trending {
+  height: 140vh;
+  width: 100%;
+  padding-top: 4rem;
+}
+.trending p {
+  font-size: 2rem;
+  text-align: center;
+  font-family: "Quintessential", serif;
 }
 .trending .trendingplaces {
   display: flex;
@@ -339,7 +374,7 @@ nav .right .id {
 }
 
 .tajmahal {
-  width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -348,24 +383,33 @@ nav .right .id {
 }
 .tajmahal img {
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   position: relative;
   z-index: 0;
 }
 .tajmahal h2 {
+  margin-top: 2rem;
   font-size: 5rem;
-  padding: 2rem;
+  padding-top: 2rem;
+  font-family: "UnifrakturMaguntia", cursive;
+}
+.tajmahal h4 {
+  font-size: 1.2rem;
+  padding: 10px 0;
+  margin-bottom: 1rem;
+  color: #ffec1c;
+  font-weight: 200;
+  font-family: "Quintessential", serif;
 }
 .tajmahal .right {
-  margin: 3rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .tajmahal .right .info {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -381,20 +425,20 @@ nav .right .id {
   padding: 10px 0;
 }
 .tajmahal .right img {
-  width: 50%;
+  width: 45%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 25% 0 0 25%;
 }
 .tajmahal .lift {
-  margin: 3rem;
+  margin: -1rem 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
 .tajmahal .lift .info {
-  width: 50%;
+  width: 45%;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -410,7 +454,7 @@ nav .right .id {
   padding: 10px 0;
 }
 .tajmahal .lift img {
-  width: 50%;
+  width: 45%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -439,13 +483,188 @@ nav .right .id {
 .tajmahal .tajphoto img:hover {
   height: 100%;
 }
+.tajmahal .nearby {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+}
+.tajmahal .nearby h2 {
+  font-size: 5rem;
+  font-family: "Quintessential", serif;
+}
+.tajmahal .nearby .places {
+  height: 80vh;
+  width: 80%;
+  grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+  gap: 10px;
+  font-size: 1rem;
+  color: rgb(0, 0, 0);
+}
+.tajmahal .nearby .places .lefttop {
+  grid-column: 1/3;
+  grid-row: 2/4;
+  background-image: url("https://i.pinimg.com/736x/7e/4d/b0/7e4db025216b3ec859c546fc59d14ab0.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.tajmahal .nearby .places .lefttop:hover {
+  scale: 2;
+}
+.tajmahal .nearby .places .lefttop h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.tajmahal .nearby .places .righttop {
+  grid-column: 3/5;
+  grid-row: 1/3;
+  background-image: url("https://images.unsplash.com/photo-1591018653367-9c01498b3320?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.tajmahal .nearby .places .righttop:hover {
+  scale: 2;
+}
+.tajmahal .nearby .places .righttop h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.tajmahal .nearby .places .leftbottom {
+  grid-row: 4/6;
+  grid-column: 2/4;
+  background-image: url("https://t3.ftcdn.net/jpg/03/42/14/70/240_F_342147053_Ghmto2LsNVkXZXKw61raqfnaYlQW77zD.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.tajmahal .nearby .places .leftbottom:hover {
+  scale: 2;
+}
+.tajmahal .nearby .places .leftbottom h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.tajmahal .nearby .places .rightbottom {
+  grid-column: 4/6;
+  grid-row: 3/5;
+  background-image: url("https://i.pinimg.com/736x/04/2d/b7/042db7432b347e6c64915451eb893739.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.tajmahal .nearby .places .rightbottom:hover {
+  scale: 2;
+}
+.tajmahal .nearby .places .rightbottom h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.tajmahal .nearby .places .mid {
+  grid-column: 3/4;
+  grid-row: 3/4;
+  background-image: url("https://eticketagra.in/images/Sikandra-agra.jpg");
+  background-size: cover;
+  background-position: center;
+  transition: all 0.5s ease;
+}
+.tajmahal .nearby .places .mid:hover {
+  scale: 2;
+}
+.tajmahal .nearby .places .mid h3 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.tajmahal .hotal {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8rem;
+}
+.tajmahal .hotal h2 {
+  font-size: 5rem;
+  font-family: sans-serif;
+  padding-bottom: 2rem;
+}
+.tajmahal .hotal .hotals {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.tajmahal .hotal .hotals .card {
+  border: 2px solid white;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+}
+.tajmahal .hotal .hotals .card:hover {
+  scale: 1.1;
+}
+.tajmahal .hotal .hotals .card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.tajmahal .hotal .hotals .card h3 {
+  font-size: 1.5rem;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.bihar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.bihar video {
+  width: 100%;
+  height: 94vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.bihar h2 {
+  font-size: 13rem;
+  padding: 2rem;
+  position: absolute;
+  font-family: "Quintessential", serif;
+  font-weight: 400;
+  font-style: normal;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: whitesmoke;
+  line-height: 1;
+  text-align: center;
+}
 
 .footer {
   background: #0b1c2d;
   color: #fff;
   padding: 60px 20px 20px;
   margin-top: -50px;
-  font-family: "Poppins", sans-serif;
 }
 .footer-info {
   width: 90%;
