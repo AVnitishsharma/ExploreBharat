@@ -248,7 +248,9 @@ const Nav = () => {
       </ul>
       <div className="right">
         <NavaSearch />
-        <div className="language">En</div>
+        <div className="language">
+          <i class="ri-translate-2"></i>
+        </div>
         <div className="id">N</div>
       </div>
     </nav>

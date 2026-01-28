@@ -10,13 +10,14 @@ function NavaSearch() {
     if (text.trim() !== "") {
       navigate(`/${text}`);
     }
+    setText("");
   };
 
   return (
     <form className="navsearch" onSubmit={handleSearch}>
       <input
         type="text"
-        placeholder="..........."
+        placeholder=""
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
