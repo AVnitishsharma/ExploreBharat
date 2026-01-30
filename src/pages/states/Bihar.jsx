@@ -1,6 +1,95 @@
 import "./Bihar.css"
 
 const Bihar = () => {
+  const districts = [
+    { 
+      name: "Patna", 
+      details: "Capital city, home to Golghar and ancient Pataliputra.",
+      places: [
+        { name: "Golghar", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/patna/golghar/Golghar_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Bihar Museum", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/patna/bihar_museum/Bihar_Museum_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Gaya", 
+      details: "A holy city famous for the Vishnupad Temple and Pind Daan.",
+      places: [
+        { name: "Mahabodhi Temple", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/gaya/mahabodhi_temple/Mahabodhi_Temple_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Vishnupad Temple", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/gaya/vishnupad_temple/Vishnupad_Temple_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Nalanda", 
+      details: "Famous for the ancient Nalanda University ruins.",
+      places: [
+        { name: "Nalanda University", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/nalanda/nalanda_university/Nalanda_University_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Pawapuri", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/nalanda/pawapuri/Pawapuri_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Darbhanga", 
+      details: "Cultural capital of Mithila, known for Makhana and Art.",
+      places: [
+        { name: "Darbhanga Fort", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Darbhanga_Fort.jpg/250px-Darbhanga_Fort.jpg" },
+        { name: "Shyama Mai Temple", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Shyama_Mai_Temple_Darbhanga.jpg/250px-Shyama_Mai_Temple_Darbhanga.jpg" }
+      ]
+    },
+    { 
+      name: "Madhubani", 
+      details: "World-famous for its traditional Madhubani paintings.",
+      places: [
+        { name: "Madhubani Art", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Madhubani_painting.jpg/250px-Madhubani_painting.jpg" },
+        { name: "Kapileshwar Sthan", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Kapileshwar_Sthan.jpg/250px-Kapileshwar_Sthan.jpg" }
+      ]
+    },
+    { 
+      name: "Rohtas", 
+      details: "Home to the historic Rohtasgarh Fort and Sher Shah Suri.",
+      places: [
+        { name: "Rohtasgarh Fort", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/rohtas/rohtasgarh_fort/Rohtasgarh_Fort_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Sher Shah Tomb", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/rohtas/sher_shah_suri_tomb/Sher_Shah_Suri_Tomb_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Bhagalpur", 
+      details: "The 'Silk City', famous for Tussar Silk and Dolphins.",
+      places: [
+        { name: "Vikramshila", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/bhagalpur/vikramshila_gangetic_dolphin_sanctuary/Vikramshila_Gangetic_Dolphin_Sanctuary_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Mandar Hill", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/banka/mandar_hill/Mandar_Hill_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Vaishali", 
+      details: "Birthplace of Lord Mahavira and the world's first republic.",
+      places: [
+        { name: "Ashokan Pillar", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/vaishali/ashokan_pillar/Ashokan_Pillar_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Vishwa Shanti Stupa", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/vaishali/vishwa_shanti_stupa/Vishwa_Shanti_Stupa_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Kaimur", 
+      details: "Known for Kaimur Wildlife Sanctuary and waterfalls.",
+      places: [
+        { name: "Telhar Kund", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/kaimur/telhar_kund/Telhar_Kund_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" },
+        { name: "Karkatgarh Waterfall", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/kaimur/karkatgarh_waterfall/Karkatgarh_Waterfall_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { 
+      name: "Aurangabad", 
+      details: "Known for the Sun Temple at Deo.",
+      places: [
+        { name: "Deo Sun Temple", img: "https://tourism.bihar.gov.in/content/dam/bihar-tourism/images/category_a/aurangabad/deo_sun_temple/Deo_Sun_Temple_1.jpg/jcr:content/renditions/cq5dam.web.1280.1280.jpeg" }
+      ]
+    },
+    { name: "Siwan", details: "Historical significance, birthplace of Dr. Rajendra Prasad.", places: [] },
+    { name: "Ara", details: "Known for its historical significance in the 1857 revolt.", places: [] },
+    { name: "Muzaffarpur", details: "Known as the 'Land of Litchis' (Shahi Litchi).", places: [] },
+    { name: "Purnia", details: "Oldest district in Bihar, known for its greenery.", places: [] },
+    { name: "Buxar", details: "Historical city known for the Battle of Buxar and ancient temples.", places: [] },
+    { name: "Nawada", details: "Famous for Kakolat Waterfall.", places: [] },
+    { name: "Jehanabad", details: "Known for the Barabar Caves.", places: [] },
+  ];
+
   return (
     <div className="bihar">
       <div className="top">
@@ -50,7 +139,7 @@ const Bihar = () => {
         <div className="box">         
         </div>
       </div>
-      <h2 className="hcategories">Popular Categories</h2>
+      <h2 className="hcategories">CATEGORIES</h2>
       <div className="biharcategory">
         <div className="box">
           <img src="https://i.pinimg.com/736x/c8/82/6b/c8826be12a20eccb568d745c38675f4c.jpg" alt="" />
@@ -77,6 +166,28 @@ const Bihar = () => {
           <h2>Culture</h2>
         </div>
         
+      </div>
+      <div className="bihardist">
+        <h3>Districts</h3>
+        <div className="box">
+          {districts.map((dist, index) => (
+            <div className="dist-card" key={index}>
+              <h2>{dist.name}</h2>
+              <div className="dist-popup">
+                <h4>{dist.name}</h4>
+                <p>{dist.details}</p>
+                <div className="places-grid">
+                  {dist.places && dist.places.map((place, i) => (
+                    <div className="place-item" key={i}>
+                      <img src={place.img} alt={place.name} />
+                      <span>{place.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   )

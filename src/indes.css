@@ -219,7 +219,7 @@ nav .right .id {
   color: white;
   font-size: 1.2rem;
 }
-.navsearch:hover {
+.navsearch:hover, .navsearch:focus-within {
   width: 150px;
 }
 .navsearch button, .navsearch i {
@@ -325,7 +325,7 @@ nav .right .id {
   background-repeat: no-repeat;
   padding-top: 2rem;
   margin-bottom: -5rem;
-  margin-top: 1rem;
+  margin-top: -5rem;
 }
 .category h2 {
   font-size: 4rem;
